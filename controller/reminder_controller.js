@@ -51,7 +51,6 @@ let remindersController = {
     };    
     const index = database.cindy.reminders.findIndex(r => (r.id === reminderToFind))
     database.cindy.reminders[index] = n_reminder
-    console.log(n_reminder)
     // Uncomment below to redirect to single item page
     //res.render("reminder/single-reminder", { reminderItem: database.cindy.reminders[index] })
     res.redirect("/reminders")
