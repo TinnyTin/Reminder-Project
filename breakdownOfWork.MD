@@ -1,18 +1,21 @@
 November 1th (First Sprint Complete) 
+
 Judy Chen: I worked on the following tasks:
 
-- This task is responsible for xyz functionality.
-- This task is responsible for xyz functionality.
-- This task is responsible for xyz functionality.
-
+- <delete Reminder> - This task is responsible for deleting reminder(s). 
+- Watched the Lecture Videos
+  
+  
 Martin Lee: I worked on the following tasks:
 
-- Edit a Reminder Functionality - This task is responsible for editing the reminders already created.
+- <Edit a Reminder>  - This task is responsible for editing the reminders already created.
 - Watched the Lecture Videos
 - Complete Trello Layout
 
+  
 Kamaljit Bhuller I worked on the following tasks:
 
 - Create Breakdown of Word for Sprint 1
 - Set up Github repo and Trello board.
 - Documentation of Progress
+- <https://expressjs.com/en/api.html> Read to get better understanding. 
