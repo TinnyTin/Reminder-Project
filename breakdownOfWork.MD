@@ -19,6 +19,7 @@ Kamaljit Bhuller I worked on the following tasks:
 - Documentation of Progress
 - [https://expressjs.com/en/api.html] Read to get better understanding.
 
+
 November 9st (Second Sprint Complete)
 
 Judy Chen: I worked on the following tasks:
@@ -28,3 +29,6 @@ Martin Lee: I worked on the following tasks:
 Kamaljit Bhuller I worked on the following tasks:
 
 - [github oauth login] - Responsible for logging in using github credentials and database.
+- [http://www.passportjs.org/] -- for information regarding authentication. 
+- [https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app] - for setting up github oauth. 
+- watched Passport.js video from Authentication Milestone
