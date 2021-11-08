@@ -42,26 +42,28 @@ let remindersController = {
 
   update: (req, res) => {
     // implement this code
-    const reminderToFind = parseInt(req.params.id)
+    const reminderToFind = parseInt(req.params.id);
     let n_reminder = {
       id: reminderToFind,
       title: req.body.title,
       description: req.body.description,
       completed: JSON.parse(req.body.completed),
-    };    
-    const index = database.cindy.reminders.findIndex(r => (r.id === reminderToFind))
-    database.cindy.reminders[index] = n_reminder
+    };
+    const index = database.cindy.reminders.findIndex(
+      (r) => r.id === reminderToFind
+    );
+    database.cindy.reminders[index] = n_reminder;
     // Uncomment below to redirect to single item page
     //res.render("reminder/single-reminder", { reminderItem: database.cindy.reminders[index] })
-    res.redirect("/reminders")
+    res.redirect("/reminders");
   },
 
   delete: (req, res) => {
     // Implement this code
-    const reminderToDelete = parseInt(req.params.id)
-    const removedReminder = database.cindy.reminders.indexOf(reminderToDelete)
-    database.cindy.reminders.splice(removedReminder, 1)
-    res.redirect("/reminders")
+    const reminderToDelete = parseInt(req.params.id);
+    const removedReminder = database.cindy.reminders.indexOf(reminderToDelete);
+    database.cindy.reminders.splice(removedReminder, 1);
+    res.redirect("/reminders");
   },
 };
 
