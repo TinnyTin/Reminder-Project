@@ -2,6 +2,8 @@ const express = require("express");
 const passport = require("../middleware/passport");
 const { forwardAuthenticated } = require("../middleware/checkAuth");
 let { database } = require("../models/userModel.js");
+const fetch = require("node-fetch");
+
 
 const router = express.Router();
 
@@ -23,12 +25,23 @@ router.post(
   })
 );
 
-router.post("/register", (req, res) => {
+
+router.post("/register", async (req, res) => {
+  const clientId = process.env.unsplashID; 
+  const query = "person"
+  const url = `https://api.unsplash.com/search/photos/?client_id=${clientId}&query=${query}?`;
+  console.log(url)
+  const data = await fetch(url);
+  const jsonData = await data.json()
+  const imagesFromUnsplash = jsonData.results;
+  imageIndex = Math.floor(Math.random() * imagesFromUnsplash.length)
+  //console.log(imageFromUnsplash)
   database.push({
     id: database.length + 1,
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
+    photo: imagesFromUnsplash[imageIndex].urls.small
   });
   database["password"] = req.body.password;
   res.render("auth/login");
