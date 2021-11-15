@@ -15,3 +15,8 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
 });
 
 module.exports = router;
+
+router.get("/uploads", ensureAuthenticated, (req, res) => {
+  res.render("uploads", { user: req.user });
+});
+
