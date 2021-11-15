@@ -92,22 +92,21 @@ app.use("/", indexRoute);
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
 app.use("/auth", authRoute);
 
+
 app.post("/uploads", async (req, res) => {
-  
-  const file = req.files[0];
+  const file = req.files[0]
   try {
     const url = await imgur.uploadFile(`./uploads/${file.filename}`);
     //res.json({ message: url.link });
     fs.unlinkSync(`./uploads/${file.filename}`);
     userModel.findById(req.user.id).photo = url.link
-    //ISSUE: redirect is not working
-    res.redirect("/dashboard") 
+    res.redirect("/dashboard")
   } catch (error) {
     console.log("error", error);
   }
-  
-  
-});
+})
+
+
 
 app.listen(3001, function () {
   console.log(
