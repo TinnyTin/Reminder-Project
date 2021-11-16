@@ -1,20 +1,24 @@
-<h1 class="mt-4">
-    Dashboard</h1>
-    <!-- for user photo only if they have a picture. which for github they always have.  -->
-<% if (user.photo !== undefined) {%>
-    <h1>
-        <img src="<%= user.photo %>  " alt="profile picture" width="20%">
-    </h1>
-    <% } %>
+<div class="container">
 
-    <% if (user.name == null || user.name == undefined) {%>
-        <p class="lead mb-3">Welcome
-            <%= user.username %>
-        </p>
-        <% } else { %>
-    <!-- user.name is not working for some reason -->
-        <p class="lead mb-3">Welcome
-            <%= user.name %>
-        </p>
-        <% } %>
-        <a href="/auth/logout" class="btn btn-secondary">Logout</a>
+
+    <h1 class="mt-4">
+        Dashboard</h1>
+        <!-- for user photo only if they have a picture. which for github they always have.  -->
+        <h1>
+            <img src="<%= user.photo %>  " alt="profile picture" width="20%">
+        </h1>
+
+
+        <% if (user.name == null || user.name == undefined) {%>
+            <p class="lead mb-3">Welcome
+                <%= user.username %>
+            </p>
+            <% } else { %>
+        <!-- user.name is not working for some reason -->
+            <p class="lead mb-3">Welcome
+                <%= user.name %>
+            </p>
+            <% } %>
+            <a href="/uploads/" class="btn btn-secondary">Change Profile Picture</a>
+            <a href="/auth/logout" class="btn btn-secondary">Logout</a>
+</div>

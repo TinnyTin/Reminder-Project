@@ -1,8 +1,9 @@
 const express = require("express");
 const router = express.Router();
 const { ensureAuthenticated, isAdmin } = require("../middleware/checkAuth");
+require('dotenv').config()
 
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   res.send("welcome");
 });
 
@@ -14,3 +15,8 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
 });
 
 module.exports = router;
+
+router.get("/uploads", ensureAuthenticated, (req, res) => {
+  res.render("uploads", { user: req.user });
+});
+

@@ -16,6 +16,7 @@ let authController = {
 
   registerSubmit: (req, res) => {
     // implement
+    // res.render("dashboard")
   },
 };
 
