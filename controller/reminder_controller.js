@@ -4,7 +4,6 @@ let remindersController = {
   list: (req, res) => {
     const user = req.user.id
     if(database[user] == undefined)  database[user] = {reminders:[]}
-    console.log(database)
     res.render("reminder/index", { reminders: database[user].reminders });
   },
 
@@ -35,7 +34,6 @@ let remindersController = {
       completed: false,
     };
     database[user].reminders.push(reminder);
-    console.log(database)
     res.redirect("/reminders");
   },
 
