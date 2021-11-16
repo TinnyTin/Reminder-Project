@@ -20,11 +20,12 @@ Kamaljit Bhuller I worked on the following tasks:
 - [https://expressjs.com/en/api.html] Read to get better understanding.
 
 
-November 9st (Second Sprint Complete)
+November 9th (Second Sprint Complete)
 
 Judy Chen: I worked on the following tasks:
 
 Martin Lee: I worked on the following tasks:
+- N/A (Life responsibilities)
 
 Kamaljit Bhuller I worked on the following tasks:
 
@@ -32,3 +33,15 @@ Kamaljit Bhuller I worked on the following tasks:
 - [http://www.passportjs.org/] -- for information regarding authentication. 
 - [https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app] - for setting up github oauth. 
 - watched Passport.js video from Authentication Milestone
+
+November 16th (Second Sprint Complete)
+
+Judy Chen: I worked on the following tasks:
+
+Martin Lee: I worked on the following tasks:
+- Reminders can only be viewed by appropriate users.
+- Reminders can only be deleted by appropriate users.
+- Reminders can only be edited by appropriate users.
+- Trello / Gitflow Management.
+
+Kamaljit Bhuller I worked on the following tasks:
