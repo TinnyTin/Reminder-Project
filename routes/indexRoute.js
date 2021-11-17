@@ -7,14 +7,10 @@ router.get("/", async (req, res) => {
   res.send("welcome");
 });
 
-router.get("/dashboard", ensureAuthenticated, (req, res) => {
-  if (req.user.role === "admin") res.redirect("/admin")
-  else {
+router.get("/dashboard", ensureAuthenticated, isAdmin, (req, res) => {
     res.render("dashboard", {
       user: req.user,
     });
-  }
-
 });
 
 router.get("/admin", ensureAuthenticated, (req, res) => {
