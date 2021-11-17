@@ -7,18 +7,13 @@ const authController = require("./controller/auth_controller");
 const session = require("express-session");
 const multer = require("multer");
 const imgur = require("imgur");
-// const helmet = require("helmet");
-// const morgan = require("morgan");
 const fs = require("fs");
 
 
 require("dotenv").config();
-// app.use(helmet());
-// app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
-
 app.use(ejsLayouts);
 
 app.set("view engine", "ejs");
@@ -82,10 +77,8 @@ app.get("/reminder/:id/edit", ensureAuthenticated, reminderController.edit);
 
 app.post("/reminder/", ensureAuthenticated, reminderController.create);
 
-// Implement this yourselfzz
 app.post("/reminder/update/:id", reminderController.update);
 
-// Implement this yourself
 app.post("/reminder/delete/:id", reminderController.delete);
 
 app.use("/", indexRoute);

@@ -22,4 +22,15 @@
             <% } %>
             <a href="/uploads/" class="btn btn-secondary">Change Profile Picture</a>
             <a href="/auth/logout" class="btn btn-secondary">Logout</a>
+        
+        <p class="lead mb-3 mt-3">Current Active Sessions:</p>
+        <ul class="list-group">
+            <% for (const [id,session] of Object.entries(sessions)) { %>
+                <li class="list-group-item">
+                    <p class="">SessionID: <%=id%></p>
+                    <p>UserID: <%=session.passport.user%></p>
+                    <a href="#" class="btn btn-secondary">Revoke Session</a>
+                </li>
+            <% } %>
+        </ul>
 </div>

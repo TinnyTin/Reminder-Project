@@ -14,14 +14,22 @@ router.get("/dashboard", ensureAuthenticated, isAdmin, (req, res) => {
 });
 
 router.get("/admin", ensureAuthenticated, (req, res) => {
-  res.render("admin", {
-    user: req.user,
-  });
+  req.sessionStore.all((err,sessions) => {
+    if(err) console.log(err)
+    else {
+      console.log(sessions)
+      res.render("admin", {
+        user: req.user, sessions: sessions,
+      });
+    }
+  })
 });
-
-module.exports = router;
 
 router.get("/uploads", ensureAuthenticated, (req, res) => {
   res.render("uploads", { user: req.user });
 });
+
+
+module.exports = router;
+
 
