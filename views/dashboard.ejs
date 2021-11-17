@@ -3,9 +3,13 @@
 
     <h1 class="mt-4">
         Dashboard</h1>
-        <!-- for user photo only if they have a picture. which for github they always have.  -->
+
         <h1>
-            <img src="<%= user.photo %>  " alt="profile picture" width="20%">
+            <% if (user.photo) { %>
+                <img src="<%= user.photo %>  " alt="profile picture" width="20%">     
+            <% } else { %>
+                <img src="stock-nopic.jpg" alt="profile picture" width="20%"> 
+            <% } %>
         </h1>
 
 
@@ -14,7 +18,7 @@
                 <%= user.username %>
             </p>
             <% } else { %>
-        <!-- user.name is not working for some reason -->
+
             <p class="lead mb-3">Welcome
                 <%= user.name %>
             </p>
