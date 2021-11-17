@@ -8,8 +8,17 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
-  res.render("dashboard", {
-    //   getting so that when used in dashboard.ejs i could pull out specific items
+  if (req.user.role === "admin") res.redirect("/admin")
+  else {
+    res.render("dashboard", {
+      user: req.user,
+    });
+  }
+
+});
+
+router.get("/admin", ensureAuthenticated, (req, res) => {
+  res.render("admin", {
     user: req.user,
   });
 });
