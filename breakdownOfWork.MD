@@ -39,9 +39,12 @@ November 16th (Second Sprint Complete)
 Judy Chen: I worked on the following tasks:
 
 Martin Lee: I worked on the following tasks:
-- Reminders can only be viewed by appropriate users.
-- Reminders can only be deleted by appropriate users.
-- Reminders can only be edited by appropriate users.
-- Trello / Gitflow Management.
+- Reminders can only be viewed by appropriate users - Self Explanatory
+- Reminders can only be deleted by appropriate users - Self Explanatory
+- Reminders can only be edited by appropriate users - Self Explanatory
+- Trello / Gitflow Management - This task is to keep Trello and Gitflow branches up to date.
+- Admin Capabilities - Admin added to user models and interface to revoke sessions are added.
+- Debugging - Debug code for develop branch before pushing as MVP (project wise)
 
 Kamaljit Bhuller I worked on the following tasks:
+
