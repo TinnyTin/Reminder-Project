@@ -97,7 +97,6 @@ app.post("/uploads", async (req, res) => {
   const file = req.files[0]
   try {
     const url = await imgur.uploadFile(`./uploads/${file.filename}`);
-    //res.json({ message: url.link });
     fs.unlinkSync(`./uploads/${file.filename}`);
     userModel.findById(req.user.id).photo = url.link
     res.redirect("/dashboard")
