@@ -1,7 +1,7 @@
 <div class="container">
 
 
-    <h1 class="mt-4">Dashboard</h1>
+    <h1 class="mt-4"> Dashboard</h1>
 
         <h1>
             <% if (user.photo) { %>
@@ -11,17 +11,28 @@
             <% } %>
         </h1>
 
-
         <% if (user.name == null || user.name == undefined) {%>
             <p class="lead mb-3">Welcome
                 <%= user.username %>
             </p>
             <% } else { %>
-
             <p class="lead mb-3">Welcome
                 <%= user.name %>
             </p>
             <% } %>
             <a href="/uploads/" class="btn btn-secondary">Change Profile Picture</a>
             <a href="/auth/logout" class="btn btn-secondary">Logout</a>
+        
+        <p class="lead mb-3 mt-3">Current Active Sessions:</p>
+        <ul class="list-group">
+            <% for (const [id,session] of Object.entries(sessions)) { %>
+                <li class="list-group-item">
+                    <p class="">SessionID: <%=id%></p>
+                    <p>UserID: <%=session.passport.user%></p>
+                    <form class="revokeForm "method="POST" action=<%= "/admin/revoke/" + id %>>
+                        <button type="submit" class="btn btn-secondary">Revoke Session</button>
+                    </form>
+                </li>
+            <% } %>
+        </ul>
 </div>
