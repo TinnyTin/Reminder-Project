@@ -1,13 +1,15 @@
 <div class="container">
 
 
-    <h1 class="mt-4">
-        Dashboard</h1>
-        <!-- for user photo only if they have a picture. which for github they always have.  -->
-        <h1>
-            <img src="<%= user.photo %>  " alt="profile picture" width="20%">
-        </h1>
+    <h1 class="mt-4"> Dashboard</h1>
 
+        <h1>
+            <% if (user.photo) { %>
+                <img src="<%= user.photo %>  " alt="profile picture" width="20%">     
+            <% } else { %>
+                <img src="stock-nopic.jpg" alt="profile picture" width="20%"> 
+            <% } %>
+        </h1>
 
         <% if (user.name == null || user.name == undefined) {%>
             <p class="lead mb-3">Welcome
