@@ -29,7 +29,9 @@
                 <li class="list-group-item">
                     <p class="">SessionID: <%=id%></p>
                     <p>UserID: <%=session.passport.user%></p>
-                    <a href="#" class="btn btn-secondary">Revoke Session</a>
+                    <form class="revokeForm "method="POST" action=<%= "/admin/revoke/" + id %>>
+                        <button type="submit" class="btn btn-secondary">Revoke Session</button>
+                    </form>
                 </li>
             <% } %>
         </ul>

@@ -3,6 +3,7 @@ const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
+const sessionsController = require("./controller/session_controller")
 const authController = require("./controller/auth_controller");
 const session = require("express-session");
 const multer = require("multer");
@@ -80,6 +81,8 @@ app.post("/reminder/", ensureAuthenticated, reminderController.create);
 app.post("/reminder/update/:id", reminderController.update);
 
 app.post("/reminder/delete/:id", reminderController.delete);
+
+app.post("/admin/revoke/:id",sessionsController.revoke)
 
 app.use("/", indexRoute);
 // Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
