@@ -7,16 +7,29 @@ router.get("/", async (req, res) => {
   res.send("welcome");
 });
 
-router.get("/dashboard", ensureAuthenticated, (req, res) => {
-  res.render("dashboard", {
-    //   getting so that when used in dashboard.ejs i could pull out specific items
-    user: req.user,
-  });
+router.get("/dashboard", ensureAuthenticated, isAdmin, (req, res) => {
+    res.render("dashboard", {
+      user: req.user,
+    });
 });
 
-module.exports = router;
+router.get("/admin", ensureAuthenticated, (req, res) => {
+  req.sessionStore.all((err,sessions) => {
+    if(err) console.log(err)
+    else {
+      console.log(sessions)
+      res.render("admin", {
+        user: req.user, sessions: sessions,
+      });
+    }
+  })
+});
 
 router.get("/uploads", ensureAuthenticated, (req, res) => {
   res.render("uploads", { user: req.user });
 });
+
+
+module.exports = router;
+
 
