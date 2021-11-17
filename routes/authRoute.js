@@ -30,12 +30,10 @@ router.post("/register", async (req, res) => {
   const clientId = process.env.unsplashID; 
   const query = "person"
   const url = `https://api.unsplash.com/search/photos/?client_id=${clientId}&query=${query}?`;
-  console.log(url)
   const data = await fetch(url);
   const jsonData = await data.json()
   const imagesFromUnsplash = jsonData.results;
   imageIndex = Math.floor(Math.random() * imagesFromUnsplash.length)
-  //console.log(imageFromUnsplash)
   database.push({
     id: database.length + 1,
     name: req.body.name,
