@@ -17,6 +17,7 @@ model User {
   password String
   name String 
   role String
+  photo String
   createdAt DateTime @default(now()) @map("create_at")
   updatedAt DateTime @updatedAt @map("updated_at")
   reminders Reminder[]

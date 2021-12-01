@@ -10,8 +10,8 @@ const githubLogin = passport.use(
       clientSecret: process.env.clientSecret,
       callbackURL: "http://localhost:3001/auth/github/callback",
     },
-    (accessToken, refreshToken, profile, done) => {
-      let user = userController.getUserGit(profile);
+    async (accessToken, refreshToken, profile, done) => {
+      let user = await userController.getUserGit(profile)
       return user
         ? done(null, user)
         : done(null, false, {
@@ -27,8 +27,8 @@ const localLogin = passport.use(
       usernameField: "email",
       passwordField: "password",
     },
-    (email, password, done) => {
-      const user = userController.getUserByEmailIdAndPassword(email, password);
+    async (email, password, done) => {
+      const user = await userController.getUserByEmailIdAndPassword(email, password)
       return user
         ? done(null, user)
         : done(null, false, {
@@ -43,8 +43,8 @@ passport.serializeUser(function (user, done) {
   done(null, user.id);
 });
 
-passport.deserializeUser(function (id, done) {
-  let user = userController.getUserById(id);
+passport.deserializeUser(async (id, done) => {
+  let user = await userController.getUserById(id);
   if (user) {
     done(null, user);
   } else {

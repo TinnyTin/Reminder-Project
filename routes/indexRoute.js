@@ -7,7 +7,9 @@ router.get("/", async (req, res) => {
   res.send("welcome");
 });
 
-router.get("/dashboard", ensureAuthenticated, isAdmin, (req, res) => {
+router.get("/dashboard", ensureAuthenticated, isAdmin, async (req, res) => {
+    // let user = await prisma.user.findUnique({ where: { id: userId } });
+    
     res.render("dashboard", {
       user: req.user,
     });
