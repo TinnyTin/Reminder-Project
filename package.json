@@ -38,7 +38,9 @@
     "unsplash-js": "^7.0.15"
   },
   "devDependencies": {
+    "@types/ejs": "^3.1.0",
     "@types/express": "^4.17.13",
+    "@types/express-session": "^1.17.4",
     "@types/multer": "^1.4.7",
     "@types/node": "^16.11.11",
     "@types/passport": "^1.0.7",
