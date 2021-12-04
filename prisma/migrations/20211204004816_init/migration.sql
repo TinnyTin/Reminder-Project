@@ -5,6 +5,7 @@ CREATE TABLE "users" (
     "password" TEXT NOT NULL,
     "name" TEXT NOT NULL,
     "role" TEXT NOT NULL,
+    "photo" TEXT NOT NULL,
     "create_at" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" DATETIME NOT NULL
 );
