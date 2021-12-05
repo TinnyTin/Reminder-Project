@@ -34,7 +34,8 @@ Kamaljit Bhuller I worked on the following tasks:
 - [https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app] - for setting up github oauth. 
 - watched Passport.js video from Authentication Milestone
 
-November 16th (Second Sprint Complete)
+
+November 23rd (Third Sprint Complete)
 
 Judy Chen: I worked on the following tasks:
 
@@ -48,3 +49,15 @@ Martin Lee: I worked on the following tasks:
 
 Kamaljit Bhuller I worked on the following tasks:
 
+
+November 30rd (Fourth Sprint Complete)
+
+Judy Chen: I worked on the following tasks:
+
+Martin Lee: I worked on the following tasks:
+
+Kamaljit Singh bhullar: I worked on the following tasks:
+- [https://www.typescriptlang.org/docs/] -- looked into typescript
+- [https://www.youtube.com/watch?v=ahCwqrYpIuM&ab_channel=Fireship] -- watched tutorials to learn typesciprt
+- [https://www.youtube.com/watch?v=BCg4U1FzODs&ab_channel=TraversyMedia] -- more tutorials to learn typescript
+- [breakdown update] -- updated the breakdown
