@@ -1,14 +1,10 @@
 import express, {Request, Response} from "express"
 const passport = require("../middleware/passport");
 const { forwardAuthenticated } = require("../middleware/checkAuth");
-const router = express.Router();
-
 const imageController = require("../controller/image_controller")
-const authController = require("../controller/image_controller")
-
-import { PrismaClient } from '@prisma/client'
-import { nextTick } from "process";
-const prisma = new PrismaClient()
+const authController = require("../controller/auth_controller")
+const router = express.Router();
+const prisma = require("../prisma")
 
 router.get("/login", forwardAuthenticated, authController.login);
 

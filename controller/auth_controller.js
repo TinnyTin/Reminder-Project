@@ -1,5 +1,3 @@
-let database = require("../database");
-
 let authController = {
   login: (req, res) => {
     res.render("auth/login");

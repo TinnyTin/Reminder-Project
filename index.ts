@@ -5,11 +5,9 @@ import { Callback } from "mongoose";
 const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
-const reminderController = require("./controller/reminder_controller");
 const imageController = require("./controller/image_controller")
 const session = require("express-session");
 const multer = require("multer");
-const { ensureAuthenticated } = require("./middleware/checkAuth.js");
 
 require("dotenv").config();
 app.use(express.static(path.join(__dirname, "public")));
@@ -62,14 +60,11 @@ app.use(passport.githubLogin.session());
 app.use(upload.any());
 
 
-
-
 // Routes start here
 
 app.use("/", indexRoute);
 app.use("/auth", authRoute);
 app.use("/reminder", reminderRoute);
-app.get("/reminders", ensureAuthenticated, reminderController.list);
 app.post("/uploads", imageController.upload)
 
 

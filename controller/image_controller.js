@@ -1,10 +1,8 @@
-const { userModel } = require("../models/userModel.js");
 const imgur = require("imgur");
 const fs = require("fs");
 const fetch = require("node-fetch")
 
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
+const prisma = require("../prisma")
 
 let imageController = {
     upload: async (req, res) => {

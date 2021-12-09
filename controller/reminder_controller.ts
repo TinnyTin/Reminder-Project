@@ -1,9 +1,5 @@
-let database = require("../database");
-const { PrismaClient } = require('@prisma/client');
-const prisma = new PrismaClient();
-import { Reminder } from ".prisma/client";
+const prisma = require("../prisma")
 import {Request, Response} from "express"
-
 
 export interface RequestWithUser extends Request {
   user: {
@@ -18,13 +14,11 @@ export interface RequestWithUser extends Request {
 
 let remindersController = {
   list: async (req: RequestWithUser, res: Response) => {
-    //if(database[user] == undefined)  database[user] = {reminders:[]}
     let reminders_list = await prisma.reminder.findMany({
       where: {
         userId: {equals: req.user.id}
       }
     })
-    console.log(reminders_list)
     res.render("reminder/index", { reminders: reminders_list });
   },
 
@@ -98,7 +92,6 @@ let remindersController = {
         },
         data: new_reminder
       })
-      //res.render("reminder/single-reminder", { reminderItem: updatedReminder })
       res.redirect("/reminders");
     }
   },

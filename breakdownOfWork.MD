@@ -55,9 +55,21 @@ November 30rd (Fourth Sprint Complete)
 Judy Chen: I worked on the following tasks:
 
 Martin Lee: I worked on the following tasks:
+- Debugging - Fixing bugs listed on Trello board
+- Prisma Setup - Creating the schema, migrations and making sure everything is consistent
+- Assisting Judy - Figuring out how to utilize Typescript
 
 Kamaljit Singh bhullar: I worked on the following tasks:
 - [https://www.typescriptlang.org/docs/] -- looked into typescript
 - [https://www.youtube.com/watch?v=ahCwqrYpIuM&ab_channel=Fireship] -- watched tutorials to learn typesciprt
 - [https://www.youtube.com/watch?v=BCg4U1FzODs&ab_channel=TraversyMedia] -- more tutorials to learn typescript
 - [breakdown update] -- updated the breakdown
+
+December 6th (Final Exams Week)
+
+Martin Lee:
+- Cleanup - Remove useless files, comments, etc.
+- Refactoring Code - Refactoring file structure to work with routes and controllers
+- Finalizing Trello Board
+- Managing Gitflow
+- More Debugging
