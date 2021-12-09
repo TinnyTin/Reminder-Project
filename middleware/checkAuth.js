@@ -13,8 +13,10 @@ module.exports = {
     },
     isAdmin: function(req, res, next) {
         if (req.user.role === "admin") {
-            return next();
+            res.redirect("/admin");
         }
-        res.render("dashboard",{user:req.user});
+        else{
+            return next()
+        }
     },  
 };

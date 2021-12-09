@@ -1,44 +1,15 @@
-const database = [
-  {
-    id: 1,
-    name: "Jimmy Smith",
-    email: "jimmy123@gmail.com",
-    password: "jimmy123!",
-    role: "user"
-  },
-  {
-    id: 2,
-    name: "Johnny Doe",
-    email: "johnny123@gmail.com",
-    password: "johnny123!",
-    role: "user"
-  },
-  {
-    id: 3,
-    name: "Jonathan Chen",
-    email: "jonathan123@gmail.com",
-    password: "jonathan123!",
-    role: "user"
-  },
-  {
-    id: 4,
-    name: "Martin Lee",
-    email: "martin123@gmail.com",
-    password: "martin123!",
-    role: "admin"
-  },
-];
+const prisma = require("../prisma")
 
 const userModel = {
-  findOne: (email) => {
-    const user = database.find((user) => user.email === email);
+  findOne: async (email) => {
+    const user = await prisma.user.findUnique({ where: { email:email } });
     if (user) {
       return user;
     }
     throw new Error(`Couldn't find user with email: ${email}`);
   },
-  findById: (id) => {
-    const user = database.find((user) => user.id === id);
+  findById: async (id) => {
+    const user = await prisma.user.findUnique({ where: { id: id } });
     if (user) {
       return user;
     }
@@ -47,20 +18,22 @@ const userModel = {
 };
 
 const userGit = {
-  findById: (profile) => {
-    let user = database.find((user) => user.id === profile.id);
+  findById: async (profile) => {
+    let user = await prisma.user.findUnique({ where: { id: profile.id } });
     if (user) {
       return user;
     }
-    database.push({
-      id: profile.id,
-      name: profile.displayName,
-      username: profile.username,
-      photo: profile.photos[0].value,
-    });
-    user = database.find((user) => user.id === profile.id);
-    return user;
+    const createdUser = await prisma.user.create({
+      data:{
+          id: profile.id,
+          email: profile.id,
+          password: profile.id,
+          name: profile.username,
+          role: "user",
+          photo: profile.photos[0].value
+  }});
+    return createdUser;
   },
 };
 
-module.exports = { database, userModel, userGit };
+module.exports = { userModel, userGit };
