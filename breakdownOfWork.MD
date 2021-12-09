@@ -69,6 +69,7 @@ December 6th (Final Exams Week)
 
 Martin Lee:
 - Cleanup - Remove useless files, comments, etc.
+- Prisma Client Global - created a prisma client global to reference instead of making 10 new Prisma Clients.
 - Refactoring Code - Refactoring file structure to work with routes and controllers
 - Finalizing Trello Board
 - Managing Gitflow
