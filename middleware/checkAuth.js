@@ -12,9 +12,11 @@ module.exports = {
         res.render("/dashboard");
     },
     isAdmin: function(req, res, next) {
-        if (req.user.role !== "admin") {
-            return next();
+        if (req.user.role === "admin") {
+            res.redirect("/admin");
         }
-        res.redirect("/admin");
+        else{
+            return next()
+        }
     },  
 };

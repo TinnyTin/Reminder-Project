@@ -1,5 +1,3 @@
-let database = require("../database");
-
 let authController = {
   login: (req, res) => {
     res.render("auth/login");
@@ -10,8 +8,10 @@ let authController = {
   },
 
   loginSubmit: (req, res) => {
-    // implement
-    res.render("/")
+    passport.localLogin.authenticate("local", {
+      successRedirect: "/dashboard",
+      failureRedirect: "/auth/login",
+    })
   },
 
   registerSubmit: (req, res) => {

@@ -34,7 +34,8 @@ Kamaljit Bhuller I worked on the following tasks:
 - [https://docs.github.com/en/developers/apps/building-github-apps/creating-a-github-app] - for setting up github oauth. 
 - watched Passport.js video from Authentication Milestone
 
-November 16th (Second Sprint Complete)
+
+November 23rd (Third Sprint Complete)
 
 Judy Chen: I worked on the following tasks:
 
@@ -48,3 +49,28 @@ Martin Lee: I worked on the following tasks:
 
 Kamaljit Bhuller I worked on the following tasks:
 
+
+November 30rd (Fourth Sprint Complete)
+
+Judy Chen: I worked on the following tasks:
+
+Martin Lee: I worked on the following tasks:
+- Debugging - Fixing bugs listed on Trello board
+- Prisma Setup - Creating the schema, migrations and making sure everything is consistent
+- Assisting Judy - Figuring out how to utilize Typescript
+
+Kamaljit Singh bhullar: I worked on the following tasks:
+- [https://www.typescriptlang.org/docs/] -- looked into typescript
+- [https://www.youtube.com/watch?v=ahCwqrYpIuM&ab_channel=Fireship] -- watched tutorials to learn typesciprt
+- [https://www.youtube.com/watch?v=BCg4U1FzODs&ab_channel=TraversyMedia] -- more tutorials to learn typescript
+- [breakdown update] -- updated the breakdown
+
+December 6th (Final Exams Week)
+
+Martin Lee:
+- Cleanup - Remove useless files, comments, etc.
+- Prisma Client Global - created a prisma client global to reference instead of making 10 new Prisma Clients.
+- Refactoring Code - Refactoring file structure to work with routes and controllers
+- Finalizing Trello Board
+- Managing Gitflow
+- More Debugging
