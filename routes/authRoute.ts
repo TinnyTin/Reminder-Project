@@ -4,30 +4,22 @@ const { forwardAuthenticated } = require("../middleware/checkAuth");
 const router = express.Router();
 
 const imageController = require("../controller/image_controller")
-//const { database } = require("../models/userModel.js");
+const authController = require("../controller/image_controller")
 
 import { PrismaClient } from '@prisma/client'
 import { nextTick } from "process";
 const prisma = new PrismaClient()
 
-router.get("/login", forwardAuthenticated, (req: Request, res: Response) =>
-  res.render("auth/login")
-);
+router.get("/login", forwardAuthenticated, authController.login);
 
-router.get("/register", (req: Request, res: Response) => res.render("auth/register"));
+router.get("/register", authController.register);
 
 router.get("/logout", (req: Request, res: Response) => {
   req.logout();
   res.redirect("/auth/login");
 });
 
-router.post(
-  "/login",
-  passport.localLogin.authenticate("local", {
-    successRedirect: "/dashboard",
-    failureRedirect: "/auth/login",
-  })
-);
+router.post("/login", authController.loginSubmit);
 
 
 router.post("/register", async (req: Request, res: Response, next) => {
