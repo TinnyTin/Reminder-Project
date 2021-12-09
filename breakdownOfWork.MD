@@ -23,6 +23,10 @@ Kamaljit Bhuller I worked on the following tasks:
 November 9th (Second Sprint Complete)
 
 Judy Chen: I worked on the following tasks:
+- Watched videos on authentication
+- Reviewed Passport.js by reading documentation at http://www.passportjs.org/docs/
+- Reviewed OAuth authentication
+- Tested functionality of code
 
 Martin Lee: I worked on the following tasks:
 - N/A (Life responsibilities)
@@ -38,6 +42,10 @@ Kamaljit Bhuller I worked on the following tasks:
 November 23rd (Third Sprint Complete)
 
 Judy Chen: I worked on the following tasks:
+- Implemented random profile picture generation upon registration using UnsplashAPI
+- Implemented the ability for users to change their profile picture and store it within a database. 
+- Read https://unsplash.com/documentation to get a better understanding of the API
+- Read https://api.imgur.com/ to get a better understanding of the API
 
 Martin Lee: I worked on the following tasks:
 - Reminders can only be viewed by appropriate users - Self Explanatory
@@ -53,6 +61,13 @@ Kamaljit Bhuller I worked on the following tasks:
 November 30rd (Fourth Sprint Complete)
 
 Judy Chen: I worked on the following tasks:
+- Integrated Prisma and database into User functionality (pilot coding with Martin)
+- Integrated Prisma and database into Reminder functionality
+- Converted a few files to .ts
+- Read up on Typescript documentation https://www.typescriptlang.org/docs/
+- Read up on Prisma documentation https://www.prisma.io/docs/
+- Tested functionality using Prisma Studio
+- Fixed a few bugs in routing
 
 Martin Lee: I worked on the following tasks:
 - Debugging - Fixing bugs listed on Trello board
