@@ -89,3 +89,8 @@ Martin Lee:
 - Finalizing Trello Board
 - Managing Gitflow
 - More Debugging
+
+Judy Chen: 
+- Update breakDownOfWork.md
+- Final functionality test
+- Fixed uploads.ejs merge issue
