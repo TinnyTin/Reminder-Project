@@ -1,7 +1,12 @@
 const { userModel, userGit } = require("../models/userModel");
+// Prisma
+const { PrismaClient } = require('@prisma/client');
+const prisma = new PrismaClient();
+const e = require("express");
 
-const getUserByEmailIdAndPassword = (email, password) => {
-  let user = userModel.findOne(email);
+
+const getUserByEmailIdAndPassword = async (email, password) => {
+  let user = await prisma.user.findFirst({ where: { email: email, password: password } });
   if (user) {
     if (isUserValid(user, password)) {
       return user;
@@ -9,15 +14,15 @@ const getUserByEmailIdAndPassword = (email, password) => {
   }
   return null;
 };
-const getUserById = (id) => {
-  let user = userModel.findById(id);
+const getUserById = async (id) => {
+  let user = await prisma.user.findUnique({ where: { id: id } });
   if (user) {
     return user;
   }
   return null;
 };
-const getUserGit = (profile) => {
-  let user = userGit.findById(profile);
+const getUserGit = async (profile) => {
+  let user = await userGit.findById(profile);
   if (user) {
     return user;
   }

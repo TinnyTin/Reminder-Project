@@ -1,19 +1,24 @@
-const express = require("express");
+import express, {Request, Response} from "express"
+
+import { Callback } from "mongoose";
+
+
+
 const app = express();
 const path = require("path");
 const ejsLayouts = require("express-ejs-layouts");
 const reminderController = require("./controller/reminder_controller");
 const sessionsController = require("./controller/session_controller")
-const authController = require("./controller/auth_controller");
+const imageController = require("./controller/image_controller")
+//const authController = require("./controller/auth_controller");
 const session = require("express-session");
 const multer = require("multer");
-const imgur = require("imgur");
-const fs = require("fs");
+
 
 
 require("dotenv").config();
 app.use(express.static(path.join(__dirname, "public")));
-app.use(express.json({ extended: false }));
+app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(ejsLayouts);
 
@@ -35,7 +40,7 @@ app.use(
 //multer image upload and storage
 const storage = multer.diskStorage({
   destination: "./uploads",
-  filename: (req, file, callback) => {
+  filename: (req: Request, file: {fieldname: String, originalname: String}, callback: Callback) => {
     callback(
       null,
       file.fieldname + "-" + Date.now() + path.extname(file.originalname)
@@ -62,8 +67,6 @@ app.use(upload.any());
 const { ensureAuthenticated } = require("./middleware/checkAuth.js");
 const { database, userModel } = require("./models/userModel");
 
-
-
 // Middleware for express
 
 // Routes start here
@@ -85,21 +88,9 @@ app.post("/reminder/delete/:id", reminderController.delete);
 app.post("/admin/revoke/:id",sessionsController.revoke)
 
 app.use("/", indexRoute);
-// Fix this to work with passport! The registration does not need to work, you can use the fake database for this.
 app.use("/auth", authRoute);
 
-
-app.post("/uploads", async (req, res) => {
-  const file = req.files[0]
-  try {
-    const url = await imgur.uploadFile(`./uploads/${file.filename}`);
-    fs.unlinkSync(`./uploads/${file.filename}`);
-    userModel.findById(req.user.id).photo = url.link
-    res.redirect("/dashboard")
-  } catch (error) {
-    console.log("error", error);
-  }
-})
+app.post("/uploads", imageController.upload)
 
 
 
